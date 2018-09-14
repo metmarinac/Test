@@ -14,7 +14,7 @@ codeunit 50103 RefreshALIssueCode
         i : Integer;
     begin
         ALIssue.DeleteAll;
-
+//lala
         // Simple web service call
         HttpClient.DefaultRequestHeaders.Add('User-Agent','Dynamics 365');
         if not HttpClient.Get('https://api.github.com/repos/Microsoft/AL/issues',
