@@ -5,7 +5,7 @@ codeunit 50103 RefreshALIssueCode
         HttpClient : HttpClient;
         ResponseMessage : HttpResponseMessage;
 
-        ALIssue : Record ALIssue;
+        ALIssue : Record ALIssueTest;
         JsonToken : JsonToken;
         JsonValue : JsonValue;
         JsonObject : JsonObject;
@@ -64,7 +64,7 @@ codeunit 50103 RefreshALIssueCode
     end;
 }
 
-table 50102 ALIssue
+table 50102 ALIssueTest
 {
 
     fields
@@ -119,7 +119,7 @@ table 50102 ALIssue
 page 50102 ALIssueList
 {
     PageType = List;
-    SourceTable = ALIssue;
+    SourceTable = ALIssueTest;
     CaptionML=ENU='AL Issues';
     Editable = false;
     SourceTableView=order(descending);
