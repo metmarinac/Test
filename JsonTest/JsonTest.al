@@ -5,7 +5,7 @@ codeunit 50103 RefreshALIssueCode
         HttpClient : HttpClient;
         ResponseMessage : HttpResponseMessage;
 
-        ALIssue : Record ALIssueTest;
+        ALIssueTest : Record ALIssueTest;
         JsonToken : JsonToken;
         JsonValue : JsonValue;
         JsonObject : JsonObject;
@@ -13,7 +13,7 @@ codeunit 50103 RefreshALIssueCode
         tJsonText : text;
         i : Integer;
     begin
-        ALIssue.DeleteAll;
+        ALIssueTest.DeleteAll;
 
         // Simple web service call
         HttpClient.DefaultRequestHeaders.Add('User-Agent','Dynamics 365');
@@ -39,17 +39,17 @@ codeunit 50103 RefreshALIssueCode
         for i := 0 to JsonArray.Count - 1 do begin
             JsonArray.Get(i,JsonToken);
             JsonObject := JsonToken.AsObject;
-            ALIssue.init;
+            ALIssueTest.init;
             if not JsonObject.Get('id',JsonToken) then
                 error('Could not find a token with key %1');
             
-            ALIssue.id := JsonToken.AsValue.AsInteger;
-            ALIssue.number := GetJsonToken(JsonObject,'number').AsValue.AsInteger;
-            ALIssue.title := GetJsonToken(JsonObject,'title').AsValue.AsText;
-            ALIssue.user := SelectJsonToken(JsonObject,'$.user.login').AsValue.AsText;
-            ALIssue.state := GetJsonToken(JsonObject,'state').AsValue.AsText;
-            ALIssue.html_url := GetJsonToken(JsonObject,'html_url').AsValue.AsText;
-            ALIssue.Insert;
+            ALIssueTest.id := JsonToken.AsValue.AsInteger;
+            ALIssueTest.number := GetJsonToken(JsonObject,'number').AsValue.AsInteger;
+            ALIssueTest.title := GetJsonToken(JsonObject,'title').AsValue.AsText;
+            ALIssueTest.user := SelectJsonToken(JsonObject,'$.user.login').AsValue.AsText;
+            ALIssueTest.state := GetJsonToken(JsonObject,'state').AsValue.AsText;
+            ALIssueTest.html_url := GetJsonToken(JsonObject,'html_url').AsValue.AsText;
+            ALIssueTest.Insert;
         end;
     end;
     procedure GetJsonToken(JsonObject:JsonObject;TokenKey:text)JsonToken:JsonToken;
