@@ -4,4 +4,6 @@ codeunit 50104 jmTest
     
     var
         tSalesHeader: Record "Sales Header"; //PBI.1234
+
+        //Novo1
 }
