@@ -1,4 +1,7 @@
 codeunit 50104 jmTest
 {
-    //lala test sprememb
+    //Removed code PBI.1234
+    
+    var
+        tSalesHeader: Record "Sales Header"; //PBI.1234
 }
