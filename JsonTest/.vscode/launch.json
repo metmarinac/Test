@@ -1,4 +1,5 @@
-{
+
+/*{
     "version": "0.2.0",
     "configurations": [
         {
@@ -7,6 +8,21 @@
             "name": "Your own server",
             "server": "http://NL-SI-X08898",
             "serverInstance": "DynamicsNAV110",
+            "authentication": "Windows",
+            "startupObjectId": 50102
+        }
+    ]
+}
+*/
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "Your own server",
+            "server": "http://SRSI-NAVSRV18-D",
+            "serverInstance": "Maia2-Sandbox01",
             "authentication": "Windows",
             "startupObjectId": 50102
         }
